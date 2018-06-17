@@ -1,0 +1,257 @@
+.TH "tobeornottobe" 3 "Sun Jun 17 2018" "Version 0.1" ""Tobe or..." genetic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tobeornottobe
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBfit\fP (_g)"
+.br
+.ti -1c
+.RI "def \fBfitPopulation\fP (_pop)"
+.br
+.ti -1c
+.RI "def \fBsortRanking\fP (_pop, _fit)"
+.br
+.ti -1c
+.RI "def \fBcompPropability\fP (_poplen, _lr=0\&.0)"
+.br
+.ti -1c
+.RI "def \fBpickPairs\fP (_pop, _prop, _numpairs=None)"
+.br
+.ti -1c
+.RI "def \fBcrosover\fP (_pairs)"
+.br
+.ti -1c
+.RI "def \fBmutate\fP (_pop, _mr=0\&.001)"
+.br
+.ti -1c
+.RI "def \fBgenerateStart\fP (_count)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBpatern\fP = 'To be or not to be\&.\&.\&.'"
+.br
+.RI "Sentence that is the target, should be between 5 and 40 characters\&. "
+.ti -1c
+.RI "int \fBpoplen\fP = 25"
+.br
+.RI "Length of population\&. "
+.ti -1c
+.RI "int \fBlog\fP = 10000"
+.br
+.RI "Maximum number of iteration before loging out data\&. "
+.ti -1c
+.RI "bool \fBdebug\fP = False"
+.br
+.RI "True if all steps should be loged out\&. "
+.ti -1c
+.RI "string \fBkey\fP = ''"
+.br
+.RI "Holds keyboard input\&. "
+.ti -1c
+.RI "int \fBit\fP = 0"
+.br
+.RI "Iteration counter\&. "
+.ti -1c
+.RI "bool \fBbest\fP = False"
+.br
+.RI "Best individual and its fit value\&. "
+.ti -1c
+.RI "def \fBpopul\fP = \fBgenerateStart\fP(\fBpoplen\fP)"
+.br
+.RI "List of individuals in population\&. "
+.ti -1c
+.RI "def \fBprop\fP = \fBcompPropability\fP(\fBpoplen\fP)"
+.br
+.RI "Propability values for population\&. "
+.ti -1c
+.RI "def \fBfitVal\fP = \fBfitPopulation\fP(\fBpopul\fP)"
+.br
+.ti -1c
+.RI "def \fBpairs\fP = \fBpickPairs\fP(\fBpopul\fP, \fBprop\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def tobeornottobe\&.compPropability ( _poplen,  _lr = \fC0\&.0\fP)"
+
+.PP
+.nf
+Computes propability based on individuals ranking plase
+    
+    Parameters:
+    _poplen - lenght of population
+    _lr - propability of picking worst individual
+    
+    Returns:
+    Function returns list of propability values
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.crosover ( _pairs)"
+
+.PP
+.nf
+Provides one point crossover over given list of idividuals
+
+    Every odd individual is crossed with even one that comes after
+    
+    Parameters:
+    _pairs - individuals to be cross (length must be even)
+    
+    Returns:
+    Funcion returns new population based created from crosover
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.fit ( _g)"
+
+.PP
+.nf
+Computes fit value for given individual
+    
+    Parameters:
+    _g - gen of individual for which fit value will be computed
+    
+    Returns:
+    Function returns a fit value for given individual
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.fitPopulation ( _pop)"
+
+.PP
+.nf
+Computes fit values for given population
+    
+    Parameters:
+    _pop - population for which fit values will be computed
+    
+    Returns:
+    Function returns corresponding fit vaues for given population
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.generateStart ( _count)"
+
+.PP
+.nf
+This class generates random start population
+
+    Parameters:
+    _count - number of individuals in population
+    
+    Returns:
+    Function returns generated population as a list
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.mutate ( _pop,  _mr = \fC0\&.001\fP)"
+
+.PP
+.nf
+Mutates population with given mutation rate
+    
+    Parameters:
+    _pop - population to be mutate vith given mutation rate
+    _mr - mutation rate, default 0.1%
+    
+    Returns:
+    Funcion returns mutated population as a list
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.pickPairs ( _pop,  _prop,  _numpairs = \fCNone\fP)"
+
+.PP
+.nf
+Picks pairs of individuals from gicen population which will be crossover
+
+    Selection is based on given propability values
+    
+    Parameters:
+    _pop - population wrom which pick will be made, if length is not even then will be picked length-1 individuals
+    _prop - propability values for population, should sum to 1
+    
+    Returns:
+        Function returns selected individuals as a list
+
+.fi
+.PP
+ 
+.SS "def tobeornottobe\&.sortRanking ( _pop,  _fit)"
+
+.PP
+.nf
+Sorts population and fit values due to fit values
+    
+    Parameters:
+    _pop - population to be sorted
+    _fit - fit values related to population
+    
+    Returns:
+    Function returns a tuple of sorted fit values and population
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "list tobeornottobe\&.best = False"
+
+.PP
+Best individual and its fit value\&. 
+.SS "bool tobeornottobe\&.debug = False"
+
+.PP
+True if all steps should be loged out\&. 
+.SS "tobeornottobe\&.fitVal = \fBfitPopulation\fP(\fBpopul\fP)"
+
+.SS "int tobeornottobe\&.it = 0"
+
+.PP
+Iteration counter\&. 
+.SS "tobeornottobe\&.key = ''"
+
+.PP
+Holds keyboard input\&. 
+.SS "int tobeornottobe\&.log = 10000"
+
+.PP
+Maximum number of iteration before loging out data\&. 
+.SS "def tobeornottobe\&.pairs = \fBpickPairs\fP(\fBpopul\fP, \fBprop\fP)"
+
+.SS "string tobeornottobe\&.patern = 'To be or not to be\&.\&.\&.'"
+
+.PP
+Sentence that is the target, should be between 5 and 40 characters\&. 
+.SS "int tobeornottobe\&.poplen = 25"
+
+.PP
+Length of population\&. 
+.SS "def tobeornottobe\&.popul = \fBgenerateStart\fP(\fBpoplen\fP)"
+
+.PP
+List of individuals in population\&. 
+.SS "def tobeornottobe\&.prop = \fBcompPropability\fP(\fBpoplen\fP)"
+
+.PP
+Propability values for population\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 'Tobe or\&.\&.\&.' genetic from the source code\&.

@@ -1,0 +1,92 @@
+.TH "tobeornottobe.py" 3 "Sun Jun 17 2018" "Version 0.1" ""Tobe or..." genetic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tobeornottobe.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBtobeornottobe\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBtobeornottobe\&.fit\fP (_g)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.fitPopulation\fP (_pop)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.sortRanking\fP (_pop, _fit)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.compPropability\fP (_poplen, _lr=0\&.0)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.pickPairs\fP (_pop, _prop, _numpairs=None)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.crosover\fP (_pairs)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.mutate\fP (_pop, _mr=0\&.001)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.generateStart\fP (_count)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "string \fBtobeornottobe\&.patern\fP = 'To be or not to be\&.\&.\&.'"
+.br
+.RI "Sentence that is the target, should be between 5 and 40 characters\&. "
+.ti -1c
+.RI "int \fBtobeornottobe\&.poplen\fP = 25"
+.br
+.RI "Length of population\&. "
+.ti -1c
+.RI "int \fBtobeornottobe\&.log\fP = 10000"
+.br
+.RI "Maximum number of iteration before loging out data\&. "
+.ti -1c
+.RI "bool \fBtobeornottobe\&.debug\fP = False"
+.br
+.RI "True if all steps should be loged out\&. "
+.ti -1c
+.RI "string \fBtobeornottobe\&.key\fP = ''"
+.br
+.RI "Holds keyboard input\&. "
+.ti -1c
+.RI "int \fBtobeornottobe\&.it\fP = 0"
+.br
+.RI "Iteration counter\&. "
+.ti -1c
+.RI "bool \fBtobeornottobe\&.best\fP = False"
+.br
+.RI "Best individual and its fit value\&. "
+.ti -1c
+.RI "def \fBtobeornottobe\&.popul\fP = generateStart(poplen)"
+.br
+.RI "List of individuals in population\&. "
+.ti -1c
+.RI "def \fBtobeornottobe\&.prop\fP = compPropability(poplen)"
+.br
+.RI "Propability values for population\&. "
+.ti -1c
+.RI "def \fBtobeornottobe\&.fitVal\fP = fitPopulation(popul)"
+.br
+.ti -1c
+.RI "def \fBtobeornottobe\&.pairs\fP = pickPairs(popul, prop)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 'Tobe or\&.\&.\&.' genetic from the source code\&.
