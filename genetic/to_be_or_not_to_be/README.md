@@ -11,4 +11,8 @@ Fit value for iteration: 1357
 
 42.0   To be or not to be...
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=af_TQ_-KUaQ
+" target="_blank"><img src="http://img.youtube.com/vi/af_TQ_-KUaQ/0.jpg" 
+alt="YouTube video" width="240" height="180" border="10" /></a>
+
 More details in [documentation](https://marcinzemlok.github.io/Python/to_be_or_not_to_be/html/)
