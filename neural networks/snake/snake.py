@@ -82,7 +82,7 @@ class Fruit:
 		return screen
 	
 	def randomize(self, ran1, ran2):
-		print self.pos
+#		print self.pos
 		self.pos[0] = random.randint(1, ran1)
 		self.pos[1] = random.randint(1, ran2)
-		print self.pos
+#		print self.pos
